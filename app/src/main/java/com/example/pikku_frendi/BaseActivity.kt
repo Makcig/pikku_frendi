@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.navigation.NavigationBarView
 import kotlinx.android.synthetic.main.bottom_view.*
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity (private val navNumber: Int): AppCompatActivity() {
     private val tag = "BaseActivity"
     fun setupBottomNavigation() {
         bottom_view.setOnItemSelectedListener {
@@ -30,6 +30,6 @@ abstract class BaseActivity : AppCompatActivity() {
                 false
             }
         }
-
+    bottom_view.menu.getItem(navNumber).isChecked = true
     }
     }

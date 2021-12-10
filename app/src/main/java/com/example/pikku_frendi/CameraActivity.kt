@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.activity_profile.*
 
 
 
-class CameraActivity : BaseActivity() {
+class CameraActivity : BaseActivity(1) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_home)

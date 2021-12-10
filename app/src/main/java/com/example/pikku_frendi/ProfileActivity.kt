@@ -6,12 +6,10 @@ import android.util.Log
 
 
 
-class ProfileActivity : BaseActivity() {
-    private val tag = "ProfileActivity"
+class ProfileActivity : BaseActivity(2) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-        Log.d(tag, "onCreate")
         setupBottomNavigation()
     }
 }
