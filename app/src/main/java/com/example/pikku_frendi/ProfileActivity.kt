@@ -1,17 +1,15 @@
 package com.example.pikku_frendi
 
-
 import android.os.Bundle
+import android.util.Log
 
-import kotlinx.android.synthetic.main.bottom_view.*
 
 
-class MainActivity : BaseActivity(0) {
+
+class ProfileActivity : BaseActivity(2) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_home)
+        setContentView(R.layout.activity_profile)
         setupBottomNavigation()
     }
 }
-
-

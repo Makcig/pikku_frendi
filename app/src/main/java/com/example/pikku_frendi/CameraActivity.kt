@@ -1,17 +1,16 @@
 package com.example.pikku_frendi
 
-
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import kotlinx.android.synthetic.main.activity_profile.*
 
-import kotlinx.android.synthetic.main.bottom_view.*
 
 
-class MainActivity : BaseActivity(0) {
+class CameraActivity : BaseActivity(1) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_home)
         setupBottomNavigation()
     }
 }
-
-
