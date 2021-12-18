@@ -14,7 +14,7 @@
         tools:layout_editor_absoluteY="0dp">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar2"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="632dp"
@@ -44,7 +44,6 @@
                     android:id="@+id/nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="230dp"
                     android:text="Edit Profile"
@@ -90,7 +89,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_image"
         android:layout_marginTop="10dp"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/green"
         android:textStyle="bold"/>
 
     <TextView
@@ -115,7 +114,7 @@
         android:id="@+id/password_label"
         style="@style/edit_profile_label"
         android:labelFor="@id/pass_input"
-        android:text="New password"
+        android:text="Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/up_layout"
         app:layout_constraintTop_toBottomOf="@id/username_input" />
@@ -134,7 +133,7 @@
         android:id="@+id/bio_label"
         style="@style/edit_profile_label"
         android:labelFor="@id/bio_input"
-        android:text="Bio"
+        android:text="Who am I?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/up_layout"
         app:layout_constraintTop_toBottomOf="@id/pass_input" />
@@ -148,6 +147,25 @@
         app:layout_constraintEnd_toStartOf="@+id/up_layout"
         app:layout_constraintStart_toEndOf="@+id/up_layout"
         app:layout_constraintTop_toBottomOf="@id/bio_label" />
+
+    <TextView
+        android:id="@+id/about_label"
+        style="@style/edit_profile_label"
+        android:labelFor="@id/about_input"
+        android:text="About me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/up_layout"
+        app:layout_constraintTop_toBottomOf="@id/bio_input" />
+
+    <EditText
+        android:id="@+id/about_input"
+        style="@style/edit_profile_input"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@+id/up_layout"
+        app:layout_constraintStart_toEndOf="@+id/up_layout"
+        app:layout_constraintTop_toBottomOf="@id/about_label" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
