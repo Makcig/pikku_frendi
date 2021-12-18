@@ -15,17 +15,8 @@ class EditProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
 
-        close_image.setOnClickListener{
+        close_image.setOnClickListener {
             finish()
         }
-        change_photo.setOnClickListener{takePhoto()}
-    }
-
-    private fun takePhoto() {
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-
-    }
-    private fun createImage() {
-
     }
 }

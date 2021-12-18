@@ -2,7 +2,9 @@ package com.example.pikku_frendi
 
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_camera.*
-
+import org.w3c.dom.Comment
+import java.sql.Types.TIMESTAMP
+import java.util.*
 
 
 class CameraActivity : BaseActivity(1) {
