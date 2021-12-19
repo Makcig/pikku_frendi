@@ -21,6 +21,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_home.scroll
+import kotlinx.android.synthetic.main.activity_login.*
 
 import kotlinx.android.synthetic.main.bottom_view.*
 import kotlinx.android.synthetic.main.item_feed.view.*
@@ -31,6 +33,8 @@ class HomeActivity : BaseActivity(0) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         setupBottomNavigation()
+
+        scroll.scrollTo(0,scroll.top)
     }
 
 
