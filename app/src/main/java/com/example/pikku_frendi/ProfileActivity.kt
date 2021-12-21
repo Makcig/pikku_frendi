@@ -26,7 +26,11 @@ class ProfileActivity : BaseActivity(2) {
             val popup = PopupMenu(this@ProfileActivity, nick)
             popup.menuInflater.inflate(R.menu.popup_menu, popup.menu)
             popup.show()
+        }
 
+        friends.setOnClickListener {
+            val intent1 = Intent(this, FriendsActivity::class.java)
+            startActivity(intent1)
         }
     }
 }
