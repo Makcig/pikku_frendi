@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.bottom_view.*
 
 abstract class BaseActivity (private val navNumber: Int): AppCompatActivity() {
     private val tag = "BaseActivity"
-    fun setupBottomNavigation() {
+    fun setupBottomNavigation() {   //activities navigointi painamalla menu-icon (kaikilla ikkunoilla)
         bottom_view.setOnItemSelectedListener {
             val nextActivity =
                 when (it.itemId) {
@@ -18,11 +18,11 @@ abstract class BaseActivity (private val navNumber: Int): AppCompatActivity() {
                         null
                 }
         }
-            if (nextActivity != null) {
+            if (nextActivity != null) { //jos seuraava activity ei ole nolla, silloin navigointi onnistuu
                 val intent = Intent(this, nextActivity)
-                intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION
+                intent.flags = Intent.FLAG_ACTIVITY_NO_ANIMATION //navigointi ilman "hypyä"
                 startActivity(intent)
-                overridePendingTransition(0,0)
+                overridePendingTransition(0,0) //navigointi ilman "hypyä"
                 true
             } else {
                 false
@@ -32,7 +32,7 @@ abstract class BaseActivity (private val navNumber: Int): AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         if (bottom_view != null) {
-            bottom_view.menu.getItem(navNumber).isChecked = true
+            bottom_view.menu.getItem(navNumber).isChecked = true //valittu menu-icon on actiivinen
         }
     }
     }
