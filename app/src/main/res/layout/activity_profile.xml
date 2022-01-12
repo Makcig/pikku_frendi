@@ -34,15 +34,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/nickname"
+                    android:id="@+id/edit_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginEnd="230dp"
                     android:layout_marginStart="20dp"
-                    android:text="Princess"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:textSize="23sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -51,9 +49,9 @@
                     android:id="@+id/down"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    app:layout_constraintBottom_toBottomOf="@id/nickname"
-                    app:layout_constraintTop_toTopOf="@id/nickname"
-                    app:layout_constraintStart_toEndOf="@id/nickname"
+                    app:layout_constraintBottom_toBottomOf="@id/edit_txt"
+                    app:layout_constraintTop_toTopOf="@id/edit_txt"
+                    app:layout_constraintStart_toEndOf="@id/edit_txt"
                     app:srcCompat="@drawable/ic_down" />
 
                 <ImageView
@@ -85,18 +83,17 @@
         app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/who_text"
-        android:textStyle="italic"
-        android:text="Snake // girl"
-        android:textSize="20dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="30dp"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="70dp"
+        android:textSize="20dp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="@id/followers_count_text"
-        app:layout_constraintStart_toStartOf="@id/posts_count_text" />
+        app:layout_constraintStart_toStartOf="@id/posts_count_text"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/posts_count_text"
