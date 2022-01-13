@@ -114,7 +114,7 @@
         android:id="@+id/password_label"
         style="@style/edit_profile_label"
         android:labelFor="@id/pass_input"
-        android:text="Password"
+        android:text="New password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/up_layout"
         app:layout_constraintTop_toBottomOf="@id/username_input" />
