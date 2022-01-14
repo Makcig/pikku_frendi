@@ -17,9 +17,9 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.bottom_view.*
 import android.widget.Toast
-
-
-
+import com.example.pikku_frendi.data.GlideApp
+import kotlinx.android.synthetic.main.activity_edit_profile.*
+import kotlinx.android.synthetic.main.activity_profile.edit_txt
 
 
 class ProfileActivity : BaseActivity(2) {
@@ -35,10 +35,17 @@ class ProfileActivity : BaseActivity(2) {
         // otetaan käyttäjätiedot FireBase tietokannasta
         data.child("users").child(login!!.uid).addListenerForSingleValueEvent(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                val userData = snapshot.getValue(User::class.java)
-                edit_txt.setText(userData!!.Name, TextView.BufferType.NORMAL)
-                who_text.setText(userData!!.whoami, TextView.BufferType.NORMAL)
-                status.setText(userData!!.Status, TextView.BufferType.EDITABLE)
+                val userData = snapshot.getValue(User::class.java) // haetaan data, käyttäen luokka User
+                edit_txt.setText(userData!!.Name, TextView.BufferType.NORMAL) // asetaan nimi
+                if(userData!!.whoami != null){
+                    who_text.setText(userData!!.whoami, TextView.BufferType.NORMAL) // "who am i" teksti
+                }
+                if(userData!!.about != null){
+                    status.setText(userData!!.about, TextView.BufferType.EDITABLE) // status teksti
+                }
+                if(userData!!.avatar != null){
+                    GlideApp.with(this@ProfileActivity).load(userData.avatar).into(avatar); // päivitetään avatar, jos tietokannassa löytyy
+                }
             }
             override fun onCancelled(error: DatabaseError) {
                 Log.d(TAG, "Tietokanta virhe", error.toException())
@@ -54,11 +61,11 @@ class ProfileActivity : BaseActivity(2) {
         val nick: TextView = findViewById<View>(R.id.edit_txt) as TextView
         nick.setOnClickListener {
             val popup = PopupMenu(this@ProfileActivity, nick)
-            popup.menuInflater.inflate(R.menu.popup_menu, popup.menu)
+            popup.menuInflater.inflate(R.menu.popup_menu, popup.menu) // näytetään "Sign out" popup ikkuna
 
             popup.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item: MenuItem? ->
-                firebaseAuth.signOut()
-                startActivity(Intent(this, LoginActivity::class.java))
+                firebaseAuth.signOut() // jos popup ikkuna painetaan, kirjaudutaan ulos
+                startActivity(Intent(this, LoginActivity::class.java)) // ja avataan LoginActivity
                 true
             })
 
